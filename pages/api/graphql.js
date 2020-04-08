@@ -6,6 +6,7 @@ const dataLoaders = require('../../apollo/dataLoaders');
 const context = () => ({
   dataLoaders: {
     charactersLoader: dataLoaders.CharactersLoader(),
+    pictureCharsLoader: dataLoaders.PictureCharsLoader(),
   },
 });
 
