@@ -29,7 +29,6 @@ module.exports = ({
       }]
     };
 
-    console.log(charactersInfo);
     return {
       ...charactersInfo,
     };
