@@ -24,26 +24,27 @@ const Grid = styled.div`
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(2, 1fr);
   grid-column-gap: 5px;
-  grid-row-gap: 5px;
+  grid-row-gap: 20px;
   justify-items: center;
   align-items: center;
 `;
 
+const numberRandom = Math.floor(Math.random() * (4 - 1 + 1) + 1);
+const url = `/static/card_close_v${numberRandom}.png`;
+
 const Card = styled.div`
-  background-image: url('/static/card_close.png');
-  width: 186.92px;
-  height: 300px;
+  background-image: url(${url});
+  width: 187px;
+  height: 315px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 30px;
 `;
 
 const List = styled.ul`
   list-style: none;
-  background: #FFFFFF;
-  padding: 15px;
-  margin-top: 220px;
+  padding: 0;
+  margin: 220px 0 0 0;
 `
 
 const Button = styled.button`
@@ -79,7 +80,7 @@ const Index = () => {
               <li>Birth: {item.birth_year}</li>
               <li>
                 <Link href="/user/[id]/" as={`/user/${item.id}/`}>
-                  <Button>Descobrir</Button>
+                  <Button>See</Button>
                 </Link>
               </li>
             </List>
