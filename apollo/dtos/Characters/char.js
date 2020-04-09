@@ -1,12 +1,12 @@
 module.exports = ({
   characters: ({
-    next,
-    previous,
-    results,
+    page,
+    results
   }) => {
+    const char = results.filter((item, index) => index+1 === page);
     let characters = [];
 
-    results.forEach((item, index) => {
+    char.forEach((item, index) => {
       characters.push({
         id: index + 1,
         name: item.name,
@@ -23,11 +23,7 @@ module.exports = ({
     });
 
     const charactersInfo = {
-      characters,
-      pages: [{
-        next: next,
-        previous:  previous,
-      }]
+      characters
     };
 
     return {

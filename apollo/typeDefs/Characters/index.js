@@ -7,6 +7,7 @@ module.exports = gql`
   }
 
   type CharacterItem {
+    id: Int
     name: String
     height: String
     mass: String
@@ -20,7 +21,6 @@ module.exports = gql`
     starships: [
       String
     ]
-    picture_chars: String
   }
 
   type Characters {
@@ -28,7 +28,12 @@ module.exports = gql`
     pages: [Pages]
   }
 
+  type Char {
+    characters: [CharacterItem]
+  }
+
   extend type Query {
     allCharacters(page: Int): Characters
+    char(page: Int): Char
   }
 `;

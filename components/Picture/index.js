@@ -1,6 +1,7 @@
 import React from 'react';
 import gql from 'graphql-tag';
 import { useQuery } from '@apollo/react-hooks';
+import styled from 'styled-components';
 
 import LoadingComponent from '../../components/Loading';
 import ErrorComponent from '../../components/Error';
@@ -10,6 +11,15 @@ const PICTURE = gql`
     picture(name: $name)
   }
 `
+const indisponivel = '/static/indisponivel.png';
+
+const Color = styled.span`
+  background-image: url('${(props) => (props.bgImage ? props.bgImage : indisponivel)}');
+  background-size: cover;
+  height: 200px;
+  width: 200px;
+  display: flex;
+`;
 
 const Picture = (item) => {
   const { name } = item;
@@ -20,9 +30,7 @@ const Picture = (item) => {
   if (loading) return <LoadingComponent />;
   if (error) return <ErrorComponent error={error} />
 
-  return (
-    <img src={data.picture} width="100" />
-  )
+  return (<Color bgImage={data.picture} />)
 }
 
 export default Picture;
