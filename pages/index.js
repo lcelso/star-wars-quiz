@@ -40,7 +40,7 @@ const Grid = styled.div`
 `;
 
 const numberRandom = Math.floor(Math.random() * (4 - 1 + 1) + 1);
-const url = `/static/card_close_v${numberRandom}.png`;
+const url = `/images/card_close_v${numberRandom}.png`;
 
 const Card = styled.div`
   background-image: url(${url});

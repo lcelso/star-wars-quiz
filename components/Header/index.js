@@ -48,7 +48,7 @@ const Header = ({ total }) => {
       <Grid>
         <ItemLeft>
           <Link href="/">
-            <a alt="Voltar para home"><img src="/static/logo.png" width="130" alt="Star Wars" /></a>
+            <a alt="Voltar para home"><img src="/images/logo.png" width="130" alt="Star Wars" /></a>
           </Link>
         </ItemLeft>
         <ItemCenter>
@@ -57,11 +57,11 @@ const Header = ({ total }) => {
         </ItemCenter>
         <ItemRight>
           <Points>
-            <li><img src="/static/icon_points.png" width="40" /></li>
+            <li><img src="/images/icon_points.png" width="40" /></li>
             <li><PointItems>{points} Pontos</PointItems></li>
-            <li><img src="/static/icon_correct.png" width="40" /></li>
+            <li><img src="/images/icon_correct.png" width="40" /></li>
             <li><PointItems>{correct} Acertos</PointItems></li>
-            <li><img src="/static/icon_error.png" width="40" /></li>
+            <li><img src="/images/icon_error.png" width="40" /></li>
             <li><PointItems>{error} Erros</PointItems></li>
           </Points>
         </ItemRight>

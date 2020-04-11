@@ -35,7 +35,7 @@ const Grid = styled.div`
 `;
 
 const Card = styled.div`
-  background-image: url('/static/card_open.png');
+  background-image: url('/images/card_open.png');
   width: 311.88px;
   height: 500px;
   display: flex;

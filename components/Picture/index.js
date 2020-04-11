@@ -12,7 +12,7 @@ const PICTURE = gql`
     picture(name: $name)
   }
 `
-const indisponivel = '/static/indisponivel.png';
+const indisponivel = '/images/indisponivel.png';
 
 const Color = styled.span`
   background-image: url('${(props) => (props.bgImage ? props.bgImage : indisponivel)}');

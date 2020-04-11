@@ -37,7 +37,7 @@ footer, header, hgroup, menu, nav, section {
 
 body {
   line-height: 1;
-  background-image: url('/static/bg.jpg');
+  background-image: url('/images/bg.jpg');
   background-color: #000000;
   background-size: cover;
   color: #FFFFFF;
