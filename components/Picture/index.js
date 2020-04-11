@@ -1,10 +1,11 @@
 import React from 'react';
+
 import gql from 'graphql-tag';
 import { useQuery } from '@apollo/react-hooks';
 import styled from 'styled-components';
 
-import LoadingComponent from '../../components/Loading';
-import ErrorComponent from '../../components/Error';
+import LoadingComponent from '@components/Loading';
+import ErrorComponent from '@components/Error';
 
 const PICTURE = gql`
   query Picture($name: String) {
@@ -27,7 +28,7 @@ const Picture = (item) => {
     variables: { name: name },
   });
 
-  if (loading) return <LoadingComponent />;
+  if (loading) return <LoadingComponent icon="ThreeDots" height="40" width="40" />;
   if (error) return <ErrorComponent error={error} />
 
   return (<Color bgImage={data.picture} />)

@@ -1,24 +1,28 @@
+import React, { useState } from 'react';
 import { withApollo } from '../apollo/utils/client';
 import gql from 'graphql-tag';
 import { useQuery } from '@apollo/react-hooks';
 import Link from 'next/link';
 import styled from 'styled-components';
 
-import PictureComponent from '../components/Picture';
-import LoadingComponent from '../components/Loading';
-import ErrorComponent from '../components/Error';
+import { PointsConsumer } from '../context/Points';
+
+import LoadingComponent from '@components/Loading';
+import ErrorComponent from '@components/Error';
+import HeaderComponent from '@components/Header';
+import SelectComponent from '@components/Select';
 
 const ALLCHARACTERS = gql`
   query AllCharacters($number: Int) {
     allCharacters(page: $number) {
       characters {
         id
-        height
-        birth_year
+        name
       }
     }
   }
 `
+
 const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -27,6 +31,12 @@ const Grid = styled.div`
   grid-row-gap: 20px;
   justify-items: center;
   align-items: center;
+
+  @media only screen 
+  and (min-device-width : 375px) 
+  and (max-device-width : 812px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 
 const numberRandom = Math.floor(Math.random() * (4 - 1 + 1) + 1);
@@ -39,6 +49,7 @@ const Card = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
 `;
 
 const List = styled.ul`
@@ -58,35 +69,50 @@ const Button = styled.button`
   outline: none;
 `
 
-const Index = () => {
+const Index = (props) => {
+  const [choice, setChoice] = useState('');
   const { data, loading, error } = useQuery(ALLCHARACTERS, {
     variables: { number: 1 },
   });
 
-  if (loading) return <LoadingComponent />;
+  if (loading) return <LoadingComponent icon="Puff" height="100" width="100" />;
   if (error) return <ErrorComponent error={error} />
   
   const { allCharacters: { characters }} = data;
 
+  function handleChoice(value) {
+    setChoice(value);
+  }
+
   return (
     <>
-      <p>Descubra quem é o personagem: </p>
+      <PointsConsumer value={props}>
+        {context => {
+          return (
+            <>
+              <HeaderComponent total={context} />
+              <Grid>
+                {characters.map((item) => (
+                  context.choice = choice,
 
-      <Grid>
-        {characters.map((item) => (
-          <Card key={item.id}>
-            <List>
-              <li>Height: {(Math.round(item.height*1)/100).toFixed(2)} cm</li>
-              <li>Birth: {item.birth_year}</li>
-              <li>
-                <Link href="/user/[id]/" as={`/user/${item.id}/`}>
-                  <Button>See</Button>
-                </Link>
-              </li>
-            </List>
-          </Card>
-        ))}
-      </Grid>
+                  <Card key={item.id}>
+                    <List>
+                      <li>
+                        <SelectComponent onChoice={handleChoice} />
+                      </li>
+                      <li>
+                         <Link href={`/details?id=${item.id}`}>
+                          <Button onClick={() => context.chosen = item.id}>See</Button>
+                        </Link>
+                      </li>
+                    </List>
+                  </Card>
+                ))}
+              </Grid>
+            </>
+          )
+        }}
+      </PointsConsumer>
     </>
   );
 }

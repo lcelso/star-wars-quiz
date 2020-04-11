@@ -8,6 +8,17 @@
       {
         "ssr": true
       }
+    ],
+    [
+      "babel-plugin-root-import",
+      {
+        "paths": [
+          {
+            "rootPathSuffix": "./components",
+            "rootPathPrefix": "@components/"
+          }
+        ]
+      }
     ]
   ]
 }

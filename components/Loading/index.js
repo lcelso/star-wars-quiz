@@ -1,7 +1,13 @@
 import React from 'react';
+import Loader from 'react-loader-spinner';
 
-const Loading = () => (
-  <h3>Loading data ...</h3>
+const Loading = ({ icon, height, width }) => (
+  <Loader
+    type={icon}
+    color="#00BFFF"
+    height={height}
+    width={width}
+  />
 );
 
 export default Loading;

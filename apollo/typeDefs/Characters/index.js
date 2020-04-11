@@ -23,6 +23,11 @@ module.exports = gql`
     ]
   }
 
+  type ListNames {
+    id: Int
+    name: String
+  }
+
   type Characters {
     characters: [CharacterItem]
     pages: [Pages]
@@ -32,8 +37,13 @@ module.exports = gql`
     characters: [CharacterItem]
   }
 
+  type Names {
+    characters: [ListNames]
+  }
+
   extend type Query {
     allCharacters(page: Int): Characters
     char(page: Int): Char
+    charsNames(page: Int): Names
   }
 `;
