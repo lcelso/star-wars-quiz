@@ -48,7 +48,7 @@ const Header = ({ total }) => {
       <Grid>
         <ItemLeft>
           <Link href="/">
-            <a alt="Voltar para home"><img src="/images/logo.png" width="130" alt="Star Wars" /></a>
+            <a id="btn-back" alt="Voltar para home"><img src="/images/logo.png" width="130" alt="Star Wars" /></a>
           </Link>
         </ItemLeft>
         <ItemCenter>

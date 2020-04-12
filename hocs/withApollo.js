@@ -1,8 +1,11 @@
-import React from 'react'
-import Head from 'next/head'
-import { ApolloProvider } from '@apollo/react-hooks'
-import { ApolloClient } from 'apollo-client'
-import { InMemoryCache } from 'apollo-cache-inmemory'
+import React from 'react';
+import Head from 'next/head';
+import { ApolloProvider } from '@apollo/react-hooks';
+import { ApolloClient } from 'apollo-client';
+import { InMemoryCache } from 'apollo-cache-inmemory';
+const { SchemaLink } = require('apollo-link-schema');
+const { schema } = require('../apollo/utils/schema');
+import { createHttpLink } from "apollo-link-http";
 
 let globalApolloClient = null
 
@@ -120,14 +123,11 @@ function createApolloClient(initialState = {}) {
 
 function createIsomorphLink() {
   if (typeof window === 'undefined') {
-    const { SchemaLink } = require('apollo-link-schema')
-    const { schema } = require('../apollo/utils/schema')
     return new SchemaLink({ schema })
   } else {
-    const { HttpLink } = require('apollo-link-http')
-    return new HttpLink({
+    return createHttpLink({
       uri: '/api/graphql',
       credentials: 'same-origin',
-    })
+    });
   }
 }

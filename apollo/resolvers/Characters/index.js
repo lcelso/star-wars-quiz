@@ -7,7 +7,7 @@ module.exports = {
   Query: {
     allCharacters: async (_, { page }, { dataLoaders }) => {
       const response = await dataLoaders.charactersLoader.load(page);
-      
+
       if (response === 404) return dtos.characters(chars.default);
       
       return dtos.characters(response);

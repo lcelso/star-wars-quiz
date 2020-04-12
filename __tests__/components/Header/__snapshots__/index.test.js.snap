@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component - Loading it must be possible to access the html element of the link to return 1`] = `ReactWrapper {}`;
+
+exports[`Component - Loading should render correctly in "debug" mode 1`] = `ShallowWrapper {}`;
