@@ -1,0 +1,1 @@
+{"ast":null,"code":"var __jsx = React.createElement;\nimport React from 'react';\nimport Loader from 'react-loader-spinner';\n\nconst Loading = ({\n  icon,\n  height,\n  width\n}) => __jsx(Loader, {\n  type: icon,\n  color: \"#00BFFF\",\n  height: height,\n  width: width\n});\n\nexport default Loading;","map":null,"metadata":{},"sourceType":"module"}

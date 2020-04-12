@@ -1,0 +1,1 @@
+{"ast":null,"code":"const {\n  makeExecutableSchema\n} = require('graphql-tools');\n\nconst typeDefs = require('../typeDefs');\n\nconst resolvers = require('../resolvers');\n\nmodule.exports = makeExecutableSchema({\n  typeDefs,\n  resolvers\n});","map":null,"metadata":{},"sourceType":"script"}

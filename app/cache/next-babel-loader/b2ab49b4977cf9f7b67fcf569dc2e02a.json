@@ -1,0 +1,1 @@
+{"ast":null,"code":"const characters = require('./Characters');\n\nconst pictureChars = require('./PictureChars');\n\nmodule.exports = {\n  CharactersLoader: characters,\n  PictureCharsLoader: pictureChars\n};","map":null,"metadata":{},"sourceType":"script"}

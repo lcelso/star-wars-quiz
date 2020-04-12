@@ -1,0 +1,1 @@
+{"ast":null,"code":"const fetch = require('node-fetch');\n\nmodule.exports = {\n  get: (url, params = {}) => fetch(url, params).then(response => (params.raw ? response : response.json()).catch(err => 404))\n};","map":null,"metadata":{},"sourceType":"script"}

@@ -1,0 +1,1 @@
+{"ast":null,"code":"const DataLoader = require('dataloader');\n\nconst Scraper = require('images-scraper');\n\nmodule.exports = () => new DataLoader(async name => {\n  const google = new Scraper();\n  const results = await google.scrape(name, 1);\n  return [results[0].url];\n});","map":null,"metadata":{},"sourceType":"script"}

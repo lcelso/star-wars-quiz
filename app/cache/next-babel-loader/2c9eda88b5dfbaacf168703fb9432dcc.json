@@ -1,0 +1,1 @@
+{"ast":null,"code":"var _require = require('graphql-tools'),\n    makeExecutableSchema = _require.makeExecutableSchema;\n\nvar typeDefs = require('../typeDefs');\n\nvar resolvers = require('../resolvers');\n\nmodule.exports = makeExecutableSchema({\n  typeDefs: typeDefs,\n  resolvers: resolvers\n});","map":null,"metadata":{},"sourceType":"script"}

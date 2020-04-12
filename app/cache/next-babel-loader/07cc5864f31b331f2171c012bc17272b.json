@@ -1,0 +1,1 @@
+{"ast":null,"code":"module.exports = {\n  Query: {\n    picture: async (_, {\n      name\n    }, {\n      dataLoaders\n    }) => {\n      const response = await dataLoaders.pictureCharsLoader.load(name);\n      return response;\n    }\n  }\n};","map":null,"metadata":{},"sourceType":"script"}

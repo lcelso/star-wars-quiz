@@ -1,0 +1,1 @@
+{"ast":null,"code":"var characters = require('./Characters');\n\nvar pictureChars = require('./PictureChars');\n\nmodule.exports = [characters, pictureChars];","map":null,"metadata":{},"sourceType":"script"}

@@ -1,0 +1,1 @@
+{"ast":null,"code":"const gql = require('graphql-tag');\n\nconst characters = require('./Characters');\n\nconst pictureChars = require('./PictureChars');\n\nconst typeDefs = gql`\n  type Query{\n    _empty: String\n  }\n  ${characters}\n  ${pictureChars}\n`;\nmodule.exports = [typeDefs];","map":null,"metadata":{},"sourceType":"script"}

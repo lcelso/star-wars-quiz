@@ -1,0 +1,1 @@
+{"ast":null,"code":"const gql = require('graphql-tag');\n\nmodule.exports = gql`\n  type Picture {\n    image: String\n  }\n\n  extend type Query {\n    picture(name: String): String\n  }\n`;","map":null,"metadata":{},"sourceType":"script"}
