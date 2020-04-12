@@ -10,9 +10,6 @@
 
 # next.js
 /.next/cache
-/.next/server
-/.next/build-manifest.json
-/.next/react-loadable-manifest.json
 /out/
 
 # production
