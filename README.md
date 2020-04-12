@@ -5,6 +5,9 @@
 
 Quiz with the characters of Star Wars.
 
+![Home](/public/images/home.png)
+![Details](/public/images/details.png)
+
 ## Installing / Getting started
 
 To do the installation follow the steps below:
