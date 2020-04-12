@@ -1,5 +1,14 @@
 {
   "name": "star-wars-list",
+  "license": "MIT",
+  "author": "Luiz Celso de Faria Alves",
+  "keywords": ["javascript", "next.js", "react", "apollo-clint", "apollo", "styled-components", "graphql"],
+  "maintainers": [
+    {
+      "name": "Luiz Celso de Faria Alves",
+      "email": "celsodesign@gmail.com"
+    }
+  ],
   "scripts": {
     "dev": "next",
     "build": "next build",
