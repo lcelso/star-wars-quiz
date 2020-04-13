@@ -6,6 +6,12 @@ const HeaderElment = styled.header`
   background-color: #040916;
   height: 60px;
   padding: 20px;
+
+  @media only screen 
+  and (min-device-width : 375px) 
+  and (max-device-width : 812px) {
+    height: auto;
+  }
 `
 
 const Grid = styled.div`
@@ -14,6 +20,12 @@ const Grid = styled.div`
   grid-template-rows: repeat(1, 1fr);
   grid-column-gap: 5px;
   grid-row-gap: 20px;
+
+  @media only screen 
+  and (min-device-width : 375px) 
+  and (max-device-width : 812px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 `;
 
 const ItemLeft = styled.div`
@@ -38,6 +50,12 @@ const PointItems = styled.span`
   padding: 12px;
   color: #000000;
   display: inline-block;
+
+  @media only screen 
+  and (min-device-width : 375px) 
+  and (max-device-width : 812px) {
+    padding: 4px;
+  }
 `;
 
 const Header = ({ total }) => {

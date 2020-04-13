@@ -6,6 +6,14 @@ import styled from 'styled-components';
 import LoadingComponent from '@components/Loading';
 import ErrorComponent from '@components/Error';
 
+const SelectElement = styled.select`
+  border: none;
+  background: #7b8491;
+  color: #FFF;
+  display: block;
+  margin: 5px 0;
+`
+
 const CHARSNAMES = gql`
   query CharNames($number: Int) {
     charsNames(page: $number) {
@@ -33,13 +41,13 @@ const Select = ({ onChoice }) => {
   });
 
   return (
-    <select
+    <SelectElement
       onChange={e => onChoice(e.target.value)}>
       <option value="DEFAULT">Selecione</option>
       {chars.map((item) => (
         <option key={item.id} value={item.name}>{item.name}</option> 
       ))}
-    </select>
+    </SelectElement>
   );
 };
 

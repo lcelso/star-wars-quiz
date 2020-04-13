@@ -17,7 +17,8 @@ const ALLCHARACTERS = gql`
     allCharacters(page: $number) {
       characters {
         id
-        name
+        birth_year
+        gender
       }
     }
   }
@@ -55,7 +56,7 @@ const Card = styled.div`
 const List = styled.ul`
   list-style: none;
   padding: 0;
-  margin: 220px 0 0 0;
+  margin: 195px 0 0 0;
 `
 
 const Button = styled.button`
@@ -68,6 +69,14 @@ const Button = styled.button`
   font-weight: bold;
   outline: none;
 `
+
+const Clue = styled.span`
+  font-size: 11px;
+  text-transform: uppercase;
+  display: block;
+  font-weight: bold;
+`
+
 
 const Index = (props) => {
   const [choice, setChoice] = useState('');
@@ -97,12 +106,17 @@ const Index = (props) => {
 
                   <Card key={item.id}>
                     <List>
+                      <li style={{ background: '#FFFFFF'}}>
+                        <Clue><strong>Dica:</strong></Clue>
+                        <Clue>Nasc.: {item.birth_year}</Clue>
+                        <Clue>Sexo: {item.gender}</Clue>
+                      </li>
                       <li>
                         <SelectComponent onChoice={handleChoice} />
                       </li>
                       <li>
                          <Link href={`/details?id=${item.id}`}>
-                          <Button onClick={() => context.chosen = item.id}>See</Button>
+                          <Button onClick={() => context.chosen = item.id}>Veja mais</Button>
                         </Link>
                       </li>
                     </List>
